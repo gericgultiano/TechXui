@@ -1,5 +1,6 @@
 
 # TechXui
+git clone
 
 # Account
 - username: user

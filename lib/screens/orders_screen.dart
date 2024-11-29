@@ -46,7 +46,7 @@ class OrdersScreen extends StatelessWidget {
           'Order ID: ${order.id}',
           style: TextStyle(
               color: const Color.fromARGB(255, 0, 0, 0),
-              fontWeight: FontWeight.bold), // Order ID color
+              fontWeight: FontWeight.bold),
         ),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,15 +55,13 @@ class OrdersScreen extends StatelessWidget {
             final quantity = entry.value;
             return Text(
               '${product.name} x $quantity - ₱${(product.price * quantity).toStringAsFixed(2)}',
-              style: TextStyle(color: Colors.black87), // Product line color
+              style: TextStyle(color: Colors.black87),
             );
           }).toList(),
         ),
         trailing: Text(
           'Total: ₱${order.finalPrice.toStringAsFixed(2)}',
-          style: TextStyle(
-              color: Colors.green,
-              fontWeight: FontWeight.bold), // Total price color
+          style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
         ),
       ),
     );

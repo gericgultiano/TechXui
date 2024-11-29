@@ -32,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white, // Font color for name
+                    color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -40,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
                   'orentgultiano.com',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.grey, // Font color for email/website
+                    color: Colors.grey,
                   ),
                 ),
                 const SizedBox(height: 20),

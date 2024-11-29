@@ -1,7 +1,7 @@
 import 'product.dart';
 
 class Order {
-  final String id; // Unique ID for the order
+  final String id;
   final Map<Product, int> productsWithQuantities;
 
   Order(this.id, this.productsWithQuantities);

@@ -1,0 +1,81 @@
+[
+    {
+        "id": "1",
+        "name": "ACER Nitro V ANV15-51-53DG",
+        "price": 53199.00,
+        "imageUrl": "assets/ST_02.png"
+    },
+    {
+      "id": "2",
+      "name": "Asus Vivabook",
+      "price": 29999.99,
+      "imageUrl": "assets/download.png"
+    },
+    {
+      "id": "3",
+      "name": "ACER PREDATOR ORION 7000",
+      "price": 200095.00,
+      "imageUrl": "assets/PREDATOR-ORION-7000-PO7-640-02.png"
+    },
+    {
+      "id": "4",
+      "name": "LENOVO IdeaPad Gaming 3",
+      "price": 44995.00,
+      "imageUrl": "assets/IdeaPad_Gaming_3_15ACH6_CT2_01.png"
+    },
+    {
+      "id": "5",
+      "name": "ACER Nitro V ANV15-51-53DG",
+      "price": 53199.00,
+      "imageUrl": "assets/ST_02.png"
+    },
+    {
+        "id": "6",
+        "name": "Asus Vivabook",
+        "price": 29999.99,
+        "imageUrl": "assets/download.png"
+      },
+      {
+        "id": "7",
+        "name": "ACER PREDATOR ORION 7000",
+        "price": 200095.00,
+        "imageUrl": "assets/PREDATOR-ORION-7000-PO7-640-02.png"
+      },
+      {
+        "id": "8",
+        "name": "LENOVO IdeaPad Gaming 3",
+        "price": 44995.00,
+        "imageUrl": "assets/IdeaPad_Gaming_3_15ACH6_CT2_01.png"
+      },
+      {
+        "id": "9",
+        "name": "ACER Nitro V ANV15-51-53DG",
+        "price": 53199.00,
+        "imageUrl": "assets/ST_02.png"
+      },
+      {
+        "id": "10",
+        "name": "Asus Vivabook",
+        "price": 29999.99,
+        "imageUrl": "assets/download.png"
+      },
+      {
+        "id": "11",
+        "name": "ACER PREDATOR ORION 7000",
+        "price": 200095.00,
+        "imageUrl": "assets/PREDATOR-ORION-7000-PO7-640-02.png"
+      },
+      {
+        "id": "12",
+        "name": "LENOVO IdeaPad Gaming 3",
+        "price": 44995.00,
+        "imageUrl": "assets/IdeaPad_Gaming_3_15ACH6_CT2_01.png"
+      },
+      {
+        "id": "13",
+        "name": "ACER Nitro V ANV15-51-53DG",
+        "price": 53199.00,
+        "imageUrl": "assets/ST_02.png"
+      }
+  ]
+  

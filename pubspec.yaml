@@ -26,6 +26,11 @@ flutter:
   assets:
     - assets/Blue-Aesthetic-Background.png
     - assets/njnj.png
+    - assets/products.json
+    - assets/download.png
+    - assets/PREDATOR-ORION-7000-PO7-640-02.png
+    - assets/IdeaPad_Gaming_3_15ACH6_CT2_01.png
+    - assets/ST_02.png
 # Uncomment and modify this section to add assets
 # assets:
 #   - images/

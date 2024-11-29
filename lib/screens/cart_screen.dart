@@ -8,7 +8,8 @@ class CartScreen extends StatefulWidget {
   final List<CartItem> cartItems;
   final Function(List<Order>) onCheckout;
 
-  const CartScreen({super.key, required this.cartItems, required this.onCheckout});
+  const CartScreen(
+      {super.key, required this.cartItems, required this.onCheckout});
 
   @override
   _CartScreenState createState() => _CartScreenState();
@@ -62,7 +63,7 @@ class _CartScreenState extends State<CartScreen> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('Blue-Aesthetic-Background.png'), 
+            image: AssetImage('Blue-Aesthetic-Background.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -70,8 +71,11 @@ class _CartScreenState extends State<CartScreen> {
           children: [
             Expanded(
               child: _cartItems.isEmpty
-                  ? const Center(child: Text('Your cart is empty.',style: TextStyle(color: Colors.white), 
-                  ))
+                  ? const Center(
+                      child: Text(
+                      'Your cart is empty.',
+                      style: TextStyle(color: Colors.white),
+                    ))
                   : ListView.builder(
                       itemCount: _cartItems.length,
                       itemBuilder: (context, index) {
@@ -95,8 +99,7 @@ class _CartScreenState extends State<CartScreen> {
     );
   }
 
-
-Widget _buildCartItem(CartItem cartItem) {
+  Widget _buildCartItem(CartItem cartItem) {
     return ListTile(
       title: Text(
         cartItem.product.name,
@@ -114,7 +117,8 @@ Widget _buildCartItem(CartItem cartItem) {
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-            icon: const Icon(Icons.remove, color: Colors.white), // Change icon color here
+            icon: const Icon(Icons.remove,
+                color: Colors.white), // Change icon color here
             onPressed: () {
               if (cartItem.quantity > 1) {
                 _updateQuantity(cartItem, cartItem.quantity - 1);
@@ -123,10 +127,10 @@ Widget _buildCartItem(CartItem cartItem) {
           ),
           Text(
             cartItem.quantity.toString(),
-            style: const TextStyle(color: Colors.white), // Change color here
+            style: const TextStyle(color: Colors.white),
           ),
           IconButton(
-            icon: const Icon(Icons.add, color: Colors.white), // Change icon color here
+            icon: const Icon(Icons.add, color: Colors.white),
             onPressed: () {
               _updateQuantity(cartItem, cartItem.quantity + 1);
             },

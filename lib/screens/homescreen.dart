@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/order.dart';
 import '../models/cart.dart';
 import '../models/product.dart';
-
 import '../services/product_service.dart';
 import '../services/providers.dart';
 import 'cart_screen.dart';
@@ -24,6 +23,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   int _selectedIndex = 0;
   List<Order> _orders = [];
   final List<CartItem> _cartItems = [];
+  bool _isProductsLoaded = false;
 
   @override
   void initState() {
@@ -31,6 +31,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     if (widget.orders != null) {
       _orders = widget.orders!;
     }
+    _loadProducts();
+  }
+
+  // Load products
+  void _loadProducts() async {
+    final productService = ref.read(productServiceProvider);
+    await productService.loadProducts();
+    setState(() {
+      _isProductsLoaded = true;
+    });
   }
 
   void _onItemTapped(int index) {
@@ -81,15 +91,22 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('Blue-Aesthetic-Background.png'), 
+            image: AssetImage('Blue-Aesthetic-Background.png'),
             fit: BoxFit.cover,
           ),
         ),
         child: Column(
           children: [
             AppBar(
-              title: Text(['Products', 'Orders', 'Cart', 'Profile'][_selectedIndex]),
+              title: Text(
+                ['Products', 'Orders', 'Cart', 'Profile'][_selectedIndex],
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               automaticallyImplyLeading: false,
+              backgroundColor: const Color.fromARGB(85, 0, 95, 173),
+              foregroundColor: Colors.white,
             ),
             Expanded(child: _buildBody(productService)),
             _buildBottomNavigationBar(),
@@ -113,6 +130,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Widget _buildProductGrid(ProductService productService) {
+    if (!_isProductsLoaded) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    if (productService.getProducts().isEmpty) {
+      return const Center(child: Text('No products available.'));
+    }
+
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
@@ -136,9 +161,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ],
       currentIndex: _selectedIndex,
       onTap: _onItemTapped,
-      selectedItemColor: Colors.blue,
-      unselectedItemColor: Colors.black,
-      backgroundColor: Colors.transparent, 
+      selectedItemColor: const Color.fromARGB(209, 2, 34, 218),
+      unselectedItemColor: const Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: const Color.fromARGB(0, 34, 34, 34),
     );
   }
 }

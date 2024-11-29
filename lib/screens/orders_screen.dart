@@ -12,7 +12,7 @@ class OrdersScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('Blue-Aesthetic-Background.png'), 
+            image: AssetImage('Blue-Aesthetic-Background.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -23,7 +23,11 @@ class OrdersScreen extends StatelessWidget {
 
   Widget _buildOrderList(List<Order> orders) {
     if (orders.isEmpty) {
-      return const Center(child: Text('No orders found.'));
+      return const Center(
+          child: Text(
+        'No orders found.',
+        style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+      ));
     }
 
     return ListView.builder(
@@ -38,7 +42,12 @@ class OrdersScreen extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: ListTile(
-        title: Text('Order ID: ${order.id}'),
+        title: Text(
+          'Order ID: ${order.id}',
+          style: TextStyle(
+              color: const Color.fromARGB(255, 0, 0, 0),
+              fontWeight: FontWeight.bold), // Order ID color
+        ),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: order.productsWithQuantities.entries.map((entry) {
@@ -46,10 +55,16 @@ class OrdersScreen extends StatelessWidget {
             final quantity = entry.value;
             return Text(
               '${product.name} x $quantity - ₱${(product.price * quantity).toStringAsFixed(2)}',
+              style: TextStyle(color: Colors.black87), // Product line color
             );
           }).toList(),
         ),
-        trailing: Text('Total: ₱${order.finalPrice.toStringAsFixed(2)}'),
+        trailing: Text(
+          'Total: ₱${order.finalPrice.toStringAsFixed(2)}',
+          style: TextStyle(
+              color: Colors.green,
+              fontWeight: FontWeight.bold), // Total price color
+        ),
       ),
     );
   }
